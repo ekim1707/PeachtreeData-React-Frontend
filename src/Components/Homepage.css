@@ -1,0 +1,65 @@
+.google-search {
+    width: 40%;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+}
+.google-search:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+  
+.homepage-container {
+    width: 100%;
+    height: 90%;
+}
+  
+.homepage-body-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    height: 93%;
+}
+.homepage-navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 15%;
+    height: 100%;
+    background: whitesmoke;
+    border-left: 5px solid lightgray;
+    /* overflow-y: scroll; */
+}
+.homepage-nav-labels {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2vw;
+    font-size: 14px;
+    text-align: left;
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+}
+.homepage-nav-labels:hover {
+    cursor: pointer;
+    background: #9b9b9b;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.nav-icons {
+    margin-right: 2vw;
+}
+.homepage-nav-labels.active {
+    background: #9b9b9b;
+    color: whitesmoke;
+}
+.homepage-main-container {
+    width: 85%;
+    height: 100%;
+}

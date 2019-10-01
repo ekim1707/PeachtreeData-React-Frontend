@@ -1,0 +1,94 @@
+nav .active{
+    text-decoration: underline;
+}
+
+nav {
+    height: 10%;
+    box-sizing: border-box;
+    background: white;
+    border-bottom: 5px solid lightgray;
+}
+nav .brand-logo, nav ul a {
+    color: gray;
+}
+nav #nav-image {
+    padding-left: 10px;
+}
+nav #nav-image:hover {
+    text-decoration: none;
+}
+.nav-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.homepage-filter-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 7%;
+    background: whitesmoke;
+    border: 5px solid lightgray;
+    border-top: none;
+}
+.homepage-welcome {
+    width: 15%;
+    text-align: center;
+}
+.datepicker {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#datepicker {
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: .5vw;
+}
+
+/* .quote-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    background: white;
+    border-left: 5px solid lightgray;
+    border-right: 5px solid lightgray;
+    border-bottom: 5px  solid lightgray;;
+    width: 100%;
+    height: 5%;
+}
+.quote-links-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 15%;
+    height: 100%;
+}
+.quote-links {
+    flex-grow: 1;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+.quote-links:hover {
+    background: gray;
+    color: white;
+    text-decoration: none;
+}
+.quote-links.active {
+    background: gray;
+    color: white;
+}
+.quote-search {
+    margin-left: 20px;
+} */
