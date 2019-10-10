@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Register from './Components/Register';
 import Login from './Components/Login';
-import Homepage from './Components/Homepage';
+import Homepage from './Components/Homepage/Homepage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
+import NavBar from './Components/NavBar/NavBar';
 import About from './About';
 import Help from './Help';
 
@@ -27,7 +27,9 @@ class App extends React.Component {
           <Route path="/help" component={Help} />
           <Route exact path='/' component={Register} />
           <Route path='/login' component={Login} />
-          <Route path='/users/homepage/' component={Homepage} />
+          <Route path='/users/homepage' render={(props) => {
+            return <Homepage history={props.history} key="users" />
+          }} />
         </div>
       </Router>
     );

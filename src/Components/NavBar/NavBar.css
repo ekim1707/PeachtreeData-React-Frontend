@@ -6,7 +6,7 @@ nav {
     height: 10%;
     box-sizing: border-box;
     background: white;
-    border-bottom: 5px solid lightgray;
+    border-bottom: 2px solid lightgray;
 }
 nav .brand-logo, nav ul a {
     color: gray;
@@ -33,7 +33,7 @@ nav #nav-image:hover {
     align-items: center;
     height: 7%;
     background: whitesmoke;
-    border: 5px solid lightgray;
+    border: 2px solid lightgray;
     border-top: none;
 }
 .homepage-welcome {
@@ -52,43 +52,3 @@ nav #nav-image:hover {
     border-radius: 5px;
     margin: .5vw;
 }
-
-/* .quote-nav {
-    display: flex;
-    flex-flow: row nowrap;
-    box-sizing: border-box;
-    background: white;
-    border-left: 5px solid lightgray;
-    border-right: 5px solid lightgray;
-    border-bottom: 5px  solid lightgray;;
-    width: 100%;
-    height: 5%;
-}
-.quote-links-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: stretch;
-    align-items: stretch;
-    width: 15%;
-    height: 100%;
-}
-.quote-links {
-    flex-grow: 1;
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-}
-.quote-links:hover {
-    background: gray;
-    color: white;
-    text-decoration: none;
-}
-.quote-links.active {
-    background: gray;
-    color: white;
-}
-.quote-search {
-    margin-left: 20px;
-} */

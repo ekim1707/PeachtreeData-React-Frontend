@@ -1,0 +1,220 @@
+.main-container-quotes {
+    width: 100%;
+    height: 92%;
+    background: lightgray;
+    overflow: scroll;
+}
+.quote-navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    background: white;
+    border-bottom: 2px solid lightgray;
+}
+.quote-navbar-toggles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8%;
+    height: 100%;
+    color: rgb(103, 103, 103);
+}
+.quote-navbar-toggles:hover {
+    cursor: pointer;
+    background: peachpuff;
+    color: rgb(103, 103, 103);
+}
+.quote-navbar > .selected {
+    background: peachpuff;
+    color: rgb(103, 103, 103);
+}
+.quote-navbar > .quote-search {
+    margin-left: 15px;
+}
+.quote-navbar > button.btn-floating {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    background: rgb(245, 183, 129);
+}
+.quote-navbar > button.btn-floating:hover {
+    background: rgb(245, 183, 129);
+}
+.row-quotes.add-quote {
+    height: 20%;
+    border-bottom: 2px solid lightgray;
+}
+.row-quotes {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    height: 130px;
+    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    background: white;
+}
+.row-quotes > button.modal-trigger {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 30px;
+    right: 0;
+    margin-right: 13px;
+    padding: 0;
+    background: lightgray;
+    opacity: .1;
+    transition: .5s;
+}
+.row-quotes > button.modal-trigger:hover {
+    background: whitesmoke;
+    cursor: pointer;
+    opacity: 1;
+    transition: .5s;
+}
+.row-quotes > button.modal-trigger > i {
+    font-size: 2rem;
+    color: rgb(245, 183, 129);
+}
+.modal {
+    width: 30%;
+    max-height: 30%;
+}
+.modal-content {
+    height: 70%;
+}
+.modal-content > h3 {
+    text-align: center;
+    color: rgb(248, 103, 103);
+}
+.modal-content > p {
+    text-align: center;
+}
+.modal-footer {
+    justify-content: space-between;
+    height: 30%;
+}
+.modal-footer > button {
+    color: lightgray;
+}
+.modal-footer > button:hover {
+    color: #575656;
+}
+.row-quotes.last-quote {
+    border-bottom: none;
+}
+.row-quotes > form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.row-quotes.add-quote > form > textarea {
+    border-color: lightgray;
+}
+.textarea-quote {
+    width: 45%;
+    height: 100%;
+    margin-right: 5px;
+}
+.textarea-quote:focus, .textarea-significance:focus {
+    outline: none;
+    border-color: peachpuff;
+    box-shadow: 0 0 10px peachpuff;
+}
+.text-inputs > input:focus, .quote-search:focus {
+    outline: none;
+    border-style:solid;
+    border-color: peachpuff;
+    box-shadow: 0 0 10px peachpuff;
+}
+.textarea-significance {
+    width: 35%;
+    height: 100%;
+    margin-right: 5px;
+}
+.input-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+.text-inputs {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.text-inputs > input.browser-default {
+    width: 100%;
+    height: 50%;
+    margin-right: 5px;
+}
+input.browser-default.origin {
+    margin-bottom: 2px;
+}
+.click-inputs {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.click-inputs > .input-field {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    margin-bottom: 2px;
+}
+.click-inputs > .input-field > .select-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.click-inputs > .input-field > .select-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.select-wrapper > ul {
+    height: 100px !important;
+}
+.click-inputs > .input-field > .select-wrapper input.select-dropdown {
+    width: 100%;
+    height: 100%;
+    line-height: 1rem;
+    font-size: 13px;
+    color: black;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    padding: 2px;
+    margin: 0;
+}
+.dropdown-content {
+    min-width: 0;
+}
+.dropdown-content li > span {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 13px;
+    color: gray;
+}
+.btn-small, .btn-small:focus {
+    background: gray;
+}
+.btn-small:hover, .btn-small:focus:hover {
+    background: rgb(245, 183, 129);
+}
+.click-inputs > .btn-small {
+    width: 100%;
+    height: 50%;
+    margin: 1px;
+    overflow: hidden;
+}

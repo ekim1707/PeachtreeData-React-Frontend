@@ -6,8 +6,8 @@
 }
 .google-search:focus { 
     outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    border-color: peachpuff;
+    box-shadow: 0 0 10px peachpuff;
 }
   
 .homepage-container {
@@ -30,7 +30,6 @@
     width: 15%;
     height: 100%;
     background: whitesmoke;
-    border-left: 5px solid lightgray;
     /* overflow-y: scroll; */
 }
 .homepage-nav-labels {
@@ -62,4 +61,8 @@
 .homepage-main-container {
     width: 85%;
     height: 100%;
+    border-left: 2px solid lightgray;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    background: lightgray;
 }

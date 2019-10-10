@@ -1,67 +1,158 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../NavBar/NavBar.css';
+import './NavBar/NavBar.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from '../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import registerAction from '../actions/registerAction';
+import SweetAlert from 'sweetalert2-react';
 
-function Register(props) {
+class Register extends Component {
     // props.history.block('Are you sure you want to leave this page?');
-    return(
-        <div className="register-container">
-        <nav>
-            <div className="nav-wrapper">
-                <img src='https://img.icons8.com/officel/2x/google-logo.png' height="75%" width="auto" alt="" id="nav-image" />
-                <span className="brand-logo center">
-                    PeachtreeData
-                </span>
-                <ul id="nav-mobile" className="hide-on-med-and-down">
-                    <li><NavLink to='/about'>About</NavLink></li>
-                    <li><NavLink to='/help'>Help</NavLink></li>
-                    <li><NavLink to='/login'>Login</NavLink></li>
-                </ul>
+    state = {
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        password2: '',
+        loggedIn: false,
+        show: false
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(this.props.registerData);
+        if (prevProps.registerData !== this.props.registerData) {
+            if (this.props.registerData) {
+                this.setState({
+                    show: true
+                })
+            } else {
+                document.body.classList.add('body-shake');
+                setTimeout(() => {
+                    document.body.classList.remove('body-shake');
+                }, 1300);
+            }
+        }
+    }
+
+    // componentDidMount() {
+    //     localStorage.clear();
+    // }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const registerData = {...this.state};
+        this.props.registerAction(registerData);
+    }
+
+    changeFirst = (e) => {
+        this.setState({
+            first_name: e.target.value
+        })
+    }
+
+    changeLast = (e) => {
+        this.setState({
+            last_name: e.target.value
+        })
+    }
+
+    changeEmail = (e) => {
+        this.setState({
+            email: e.target.value
+        })
+    }
+
+    changePassword = (e) => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+
+    changePassword2 = (e) => {
+        this.setState({
+            password2: e.target.value
+        })
+    }
+
+    render() {
+        return(
+            <div className="register-container">
+            <nav>
+                <div className="nav-wrapper">
+                    <img src='https://img.icons8.com/officel/2x/google-logo.png' height="75%" width="auto" alt="" id="nav-image" />
+                    <span className="brand-logo center">
+                        PeachtreeData
+                    </span>
+                    <ul id="nav-mobile" className="hide-on-med-and-down">
+                        <li><NavLink to='/about'>About</NavLink></li>
+                        <li><NavLink to='/help'>Help</NavLink></li>
+                        <li><NavLink to='/login'>Login</NavLink></li>
+                    </ul>
+                </div>
+            </nav>
+            <div className="body-container">
+                <div className="icon-logo"></div>
+                <form onSubmit={this.handleSubmit} className="signup-container">
+                    Create An Account
+                    <div className="signup-name-field">
+                        <div className="input-field">
+                            <i className="material-icons prefix">account_circle</i>
+                            <input onChange={this.changeFirst} value={this.state.first_name} className={this.state.warn} id="first_name" type="text"/>
+                            <label htmlFor="first_name">First Name</label>
+                        </div>
+                        <div className="input-field signup-last-name">
+                            <input onChange={this.changeLast} value={this.state.last_name} className={this.state.warn} id="last_name" type="text"/>
+                            <label htmlFor="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div className="signup-row">
+                        <div className="input-field">
+                            <i className="material-icons prefix">email</i>
+                            <input onChange={this.changeEmail} value={this.state.email} className={this.state.warn} id="email" type="email"/>
+                            <label htmlFor="email">Email</label>
+                        </div>
+                    </div>
+                    <div className="signup-row">
+                        <div className="input-field">
+                            <i className="material-icons prefix">lock</i>
+                            <input onChange={this.changePassword} value={this.state.password} className={this.state.warn} id="password" type="password"/>
+                            <label htmlFor="password">Password</label>
+                        </div>
+                    </div>
+                    <div className="signup-row">
+                        <div className="input-field">
+                            <i className="material-icons prefix">lock</i>
+                            <input onChange={this.changePassword2} value={this.state.password2} className={this.state.warn} id="password2" type="password"/>
+                            <label htmlFor="password">Re-type Password</label>
+                        </div>
+                    </div>
+                    <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i className="material-icons right">send</i>
+                    </button>
+                </form>
             </div>
-        </nav>
-        <div className="body-container">
-            <div className="icon-logo"></div>
-            <form className="signup-container" action="/users/register" method="POST">
-                Create An Account
-                <div className="signup-name-field">
-                    <div className="input-field">
-                        <i className="material-icons prefix">account_circle</i>
-                        <input id="first_name" type="text" name="first_name"/>
-                        <label htmlFor="first_name">First Name</label>
-                    </div>
-                    <div className="input-field signup-last-name">
-                        <input id="last_name" type="text" name="last_name"/>
-                        <label htmlFor="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div className="signup-row">
-                    <div className="input-field">
-                        <i className="material-icons prefix">email</i>
-                        <input id="email" type="email"/>
-                        <label htmlFor="email">Email</label>
-                    </div>
-                </div>
-                <div className="signup-row">
-                    <div className="input-field">
-                        <i className="material-icons prefix">lock</i>
-                        <input id="password" type="password" name="password"/>
-                        <label htmlFor="password">Password</label>
-                    </div>
-                </div>
-                <div className="signup-row">
-                    <div className="input-field">
-                        <i className="material-icons prefix">lock</i>
-                        <input id="password2" type="password" name="password2"/>
-                        <label htmlFor="password">Re-type Password</label>
-                    </div>
-                </div>
-                <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i className="material-icons right">send</i>
-                </button>
-            </form>
-        </div>
-        </div>
-    )
+            <SweetAlert 
+                show={this.state.show}
+                title="Success!"
+                text="Account created."
+                confirmButtonColor="gray"
+                onConfirm={() => this.props.history.push(`/users/homepage`)}
+            />
+            </div>
+        )
+    }
 }
 
-export default Register;
+function mapStateToProps(state) {
+    return ({
+        registerData: state.auth
+    })
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators ({
+        registerAction
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -9,7 +9,7 @@ function HomepageNavBar(props){
     return(
         <div className="homepage-filter-bar">
             <div className="homepage-welcome">
-                Welcome, {props.data.name}!
+                Welcome, {props.data.first_name}!
             </div>
             <div className="datepicker">
                 Start Date
