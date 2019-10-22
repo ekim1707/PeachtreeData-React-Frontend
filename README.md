@@ -30,65 +30,67 @@ I first had the idea of a life-database type site at the start of bootcamp when 
 I had done quite a few of my own practice projects up to this point, but this is definitely the first complete, and significantly comprehensive full-stack project I have completed so far. It was definitely challenging in many aspects, but I think the single complaint that stood out while I was toiling away at it was how many various tasks (large or small) that I had to take care of all by myself. I remember several times wondering if I should have chosen a different idea for this solo-project that I wanted to finish as quickly as possible finalize my portfolio. As I kept going, I kept finding more and more aspects I wanted to include that would make a social media-type site really stand out, and I just didn't have the time or resources to manage it all by myself.
 
 ## Screenshots
-  * Intro page:
+  * Connections page:
 ![alt text](https://github.com/ekim1707/PeachtreeData-React-Frontend/blob/master/connections.png 'connections.png')
-  * A look at a modal on the cards page:
+  * Freewrite page that has duel sticky-note/journal capability:
 ![alt text](https://github.com/ekim1707/PeachtreeData-React-Frontend/blob/master/freewrite.png 'freewrite.png')
 
 ## Github Link
-[Github](https://github.com/ekim1707/widowsite)
+[Github](https://github.com/ekim1707/PeachtreeData-React-Frontend)
 
 ## Code Examples
 ---
-  Filter method used for Hero card page search bar:
+  Creating separate image/video "cards" with one large array of data:
 ```
-const heroSearch = data.filter(function (data) {
-    const newHero = data.name.filter(name => name.toLowerCase().includes(e.target.value.toLowerCase()));
-    if (newHero.length > 0) {
-        return true
+const cardList = this.props.data.map((card, i) => {
+    if (card.image) {
+        return (
+            <Card modalTrigger={this.props.modalTrigger} data={card} key={i} />
+        )
+    } else if (card.embed) {
+        return (
+            <VideoCard modalTrigger={this.props.modalTrigger} data={card} key={i} />
+        )
     } else {
-        return false
+        // eslint-disable-next-line
+        return
     }
-});
-this.setState({
-    heroes: heroSearch,
-    search: e.target.value
 })
 ```
-  flipCards method for the flip buttons in the Hero card page:
+  As well as mapping the "cards" for quotations/song lyrics:
 ```
-flipCards(type) {
-    let getCards;
-    if (type === 'All') {
-        getCards = [].slice.call(document.querySelectorAll('.card'));
-    } else {
-        getCards = [].slice.call(document.querySelectorAll(`#${type}`));
-    }
-    if (getCards.length === 0) {
-        document.getElementById(`flip-${type.toLowerCase()}`).classList.add('body-shake');
-        setTimeout(() => {document.getElementById(`flip-${type.toLowerCase()}`).classList.remove('body-shake')}, 1000);
-    } else {
-        const newCards = getCards.filter(card => !card.classList.contains('flip'));
-        if (newCards.length > 0) {
-            newCards.forEach(card => card.classList.add('flip'));
-        } else {
-            getCards.forEach(card => card.classList.remove('flip'));
-        }
-    }
-}
-```
- Ran into trouble with the datestamp for posts in the Forum. Despite data being entered in as "Date" into SQL (yyyy-MM-dd format), whenever I pulled it out, it would come out as a timestamp instead (e.g. "2019-10-11T04:00:00.000Z"). Looked for a easy solution for a while, but after finding none, decided to fix the problem manually:
-```
-const yyyy = this.props.data.date_posted.slice(0, 4);
-const MM = this.props.data.date_posted.slice(5, 7);
-const dd = this.props.data.date_posted.slice(8, 10);
-const newDateString = (MM + "/" + dd + "/" + yyyy);
-const hourCheck = this.props.data.time_posted.slice(0, 2);
-let newTimeString;
-if (hourCheck > 12) {
-    const hh = ((hourCheck - 12) * .01).toString().slice(2);
-    newTimeString = (hh + this.props.data.time_posted.slice(2) + 'PM EST');
-} else {
-    newTimeString = (this.props.data.time_posted + 'AM EST');
-}
+const arrayLength = this.state.data.length;
+   const quotebookArray = this.state.data.map((entry, i) => {
+       if (i + 1 === arrayLength) {
+           return (
+               <div className="row-quotes hoverable last-quote" key={i}>
+                   <img className="row-quotes-background" src={entry.quote_type === 'Quotation' ? quote : song} alt="" />
+                   <div className="row-quotes-main-entry">
+                       "{entry.quote}"
+                   </div>
+                   <div className="row-quotes-right-col">
+                       <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
+                       <div className="style-peachpuff">{entry.origin}</div>
+                       <div className="when-row"><i className="material-icons">watch_later</i>{entry.when_said}</div>
+                       {/* <div>{entry.significance}</div> */}
+                   </div>
+               </div>
+           )
+       } else {
+           return (
+               <div className="row-quotes hoverable" key={i}>
+                   <img className="row-quotes-background" src={entry.quote_type === 'Quotation' ? quote : song} alt="" />
+                   <div className="row-quotes-main-entry">
+                       "{entry.quote}"
+                   </div>
+                   <div className="row-quotes-right-col">
+                       <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
+                       <div className="style-peachpuff">{entry.origin}</div>
+                       <div className="when-row"><i className="material-icons">watch_later</i>{entry.when_said}</div>
+                       {/* <div>{entry.significance}</div> */}
+                   </div>
+               </div>
+           )
+       }
+   })
 ```
