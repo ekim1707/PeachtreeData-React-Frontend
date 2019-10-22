@@ -3,7 +3,7 @@
 This is a project I started around Week 5 or so of bootcamp and attempted 3 separate versions of, culminating in this final version written in React.
 
 ## Video Link
-[PeachtreeData Video](https://www.youtube.com/watch?v=TMt0IHfmBbg)
+[PeachtreeData](https://www.youtube.com/watch?v=TMt0IHfmBbg)
 
 ## Contents
   * What It Is
