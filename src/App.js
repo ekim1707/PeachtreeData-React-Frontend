@@ -44,6 +44,12 @@ class App extends React.Component {
           <Route path='/users/homepage' render={(props) => {
             return loggedIn ? <Homepage history={props.history} key="users" /> : <Redirect to="/" />
           }} />
+          <div className="upload-div hoverable hidden">
+              <div className="upload-area">
+                  <i className="material-icons">file_upload</i>
+                  DRAG AND DROP CONTENT HERE
+              </div>
+          </div>
         </div>
       </Router>
     );

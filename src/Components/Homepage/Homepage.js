@@ -205,12 +205,6 @@ class Homepage extends Component {
                         return <Feedback history={props.history} key="feedback" />
                     }} />              
                 </div>
-                <div className="upload-div hoverable hidden">
-                    <div className="upload-area">
-                        <i className="material-icons">file_upload</i>
-                        DRAG AND DROP CONTENT HERE
-                    </div>
-                </div>
             </div>
         )
     }

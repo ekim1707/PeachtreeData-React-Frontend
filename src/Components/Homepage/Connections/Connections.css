@@ -32,12 +32,16 @@
 .flex-letter-divs i {
     pointer-events: none;
 }
+.react-multiple-carousel__arrow {
+    min-width: 35px !important;
+    min-height: 35px !important;
+}
 .react-multiple-carousel__arrow--left {
-    top: 5px;
+    top: 10px;
     left: calc(0% + 1px) !important;
 }
 .react-multiple-carousel__arrow--right {
-    top: 5px;
+    top: 10px;
     right: calc(0% + 1px) !important;
 }
 .react-multi-carousel-list > button:focus {

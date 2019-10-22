@@ -50,8 +50,8 @@
 }
 .google-search:focus { 
     outline: none;
-    border-color: peachpuff;
-    box-shadow: 0 0 10px peachpuff;
+    border: 1px solid dodgerblue;
+    box-shadow: 0 0 5px dodgerblue;
 }
 .main-navbar-right-col {
     display: flex;

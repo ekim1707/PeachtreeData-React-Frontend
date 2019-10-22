@@ -36,8 +36,14 @@ class QuoteBook extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.updatedData !== this.props.updatedData) {
+            if (document.querySelector(".quote-navbar-toggles.selected").id === "all") {
+                this.all();
+            } else if (document.querySelector(".quote-navbar-toggles.selected").id === "quotes") {
+                this.quotesOnly();
+            } else if (document.querySelector(".quote-navbar-toggles.selected").id === "lyrics") {
+                this.lyricsOnly();
+            }
             this.setState({
-                data: this.props.updatedData,
                 quote: '',
                 quoteb64: '',
                 type: 'Quotation',
@@ -187,7 +193,7 @@ class QuoteBook extends Component {
                         <div className="row-quotes-right-col">
                             <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
                             <div className="style-peachpuff">{entry.origin}</div>
-                            <div className="when-row"><i class="material-icons">watch_later</i>{entry.when_said}</div>
+                            <div className="when-row"><i className="material-icons">watch_later</i>{entry.when_said}</div>
                             {/* <div>{entry.significance}</div> */}
                         </div>
                     </div>
@@ -202,7 +208,7 @@ class QuoteBook extends Component {
                         <div className="row-quotes-right-col">
                             <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
                             <div className="style-peachpuff">{entry.origin}</div>
-                            <div className="when-row"><i class="material-icons">watch_later</i>{entry.when_said}</div>
+                            <div className="when-row"><i className="material-icons">watch_later</i>{entry.when_said}</div>
                             {/* <div>{entry.significance}</div> */}
                         </div>
                     </div>
