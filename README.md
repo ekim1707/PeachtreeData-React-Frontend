@@ -31,9 +31,9 @@ I had done quite a few of my own practice projects up to this point, but this is
 
 ## Screenshots
   * Intro page:
-![alt text](https://github.com/ekim1707/widowsite/blob/master/intropage.png 'intropage.png')
+![alt text](https://github.com/ekim1707/PeachtreeData-React-Frontend/blob/master/connections.png 'connections.png')
   * A look at a modal on the cards page:
-![alt text](https://github.com/ekim1707/widowsite/blob/master/modalpage.png 'modalpage.png')
+![alt text](https://github.com/ekim1707/PeachtreeData-React-Frontend/blob/master/freewrite.png 'freewrite.png')
 
 ## Github Link
 [Github](https://github.com/ekim1707/widowsite)
