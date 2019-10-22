@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+}
+
+.connections {
+    background: lightgray;
+}
+.react-multi-carousel-list, .react-multi-carousel-track {
+    height: 75px;
+}
+.react-multi-carousel-track > li {
+    width: 62.5px;
+}
+.letter-divs {
+    display: inline-block;
+    width: 100%;
+    height: 54px;
+    background: white;
+}
+.flex-letter-divs.selected {
+    background: peachpuff;
+}
+.flex-letter-divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    user-select: none;
+}
+.flex-letter-divs i {
+    pointer-events: none;
+}
+.react-multiple-carousel__arrow--left {
+    top: 5px;
+    left: calc(0% + 1px) !important;
+}
+.react-multiple-carousel__arrow--right {
+    top: 5px;
+    right: calc(0% + 1px) !important;
+}
+.react-multi-carousel-list > button:focus {
+    background: rgba(0,0,0,0.8);
+}
+
+.react-multi-carousel-track:hover {
+    cursor: pointer;
+}
+/* .react-multi-carousel-track:active {
+    cursor: grab;
+} */
+.flex-letter-divs:hover {
+    background: peachpuff;
+}
+.react-multi-carousel-dot-list {
+    background: white;
+    padding-bottom: 3px !important;
+}
+.connections > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    color: lightgray;
+    background: white;
+    margin: 2px 0px 0 0px;
+    padding: 2px;
+    transition: .5s;
+    z-index: 10;
+}
+.refresh {
+    right: 2px;
+}
+.connections > button:hover {
+    color: gray;
+    background: peachpuff;
+    transition: .5s;
+}
+.sidenav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    width: 15%;
+    height: 100%;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+.background-image {
+    position: absolute;
+    width: 220px;
+    height: 550px;
+    left: 0;
+    top: 200px;
+    opacity: .3;
+    background: url('./images/socialnetwork.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -3;
+}
+.sidenav-first-row {
+    display: flex;
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.45em;
+    font-weight: bolder;
+    overflow: hidden;
+}
+.user-info {
+    width: 100%;
+}
+.user-location {
+    padding: 2px 0px 2px 8px;
+}
+.user-email {
+    padding: 2px 0px 2px 8px;
+}
+.connections-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 5px 0 5px;
+}
+.connections-info i {
+    width: 25%;
+    padding: 0;
+}
+.connections-info > div {
+    width: 55%;
+    background: rgb(255, 255, 255, .5);
+    padding: 2px;
+    border-radius: 10px;
+}
+.connections-info > span {
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
+    background: rgb(255, 255, 255, .5);
+    color: #f0a830;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.sidenav > hr {
+    margin-top: 8px;
+    border-color: lightgray;
+}
+
+.add-friend-filter-search {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background: white;
+}
+.add-friend-filter-search:focus-within {
+    border-color: #f0a830;
+}
+.add-friend-filter-search i {
+    color: lightgray;
+    border: none;
+}
+.add-friend-filter-search input {
+    width: 100%;
+    border: none;
+}
+.add-friend-filter-search input:focus {
+    outline: none;
+}
+
+.cardset-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 88%;
+    overflow: scroll;
+}
+.card.small.connections-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 230px;
+    margin: 10px;
+    border-radius: 75px 75px 10px 10px;
+    transition: 1s;
+}
+.card.small:hover {
+    cursor: pointer;
+}
+.cardset-container > .card.small.connections-card:hover > .card-action {
+    background: peachpuff;
+    transition: 1s;
+}
+.card.small.connections-card .card-image {
+    height: 150px;
+    max-height: 150px;
+}
+.card.small.connections-card .card-image img{
+    display: flex;
+    position: static;
+    margin: 5px;
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+    object-fit: cover;
+}
+.card-image > span {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    right: 0;
+    bottom: 0;
+    padding: 0 3px 5px 0;
+}
+.card-action span {
+    display: none;
+}
+.card-image > span:hover {
+    cursor: pointer;
+}
+.card .card-action:last-child {
+    height: 80px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background: whitesmoke;
+}
+.online-status {
+    position: absolute;
+    bottom: 5px;
+}
+
+.filter-search-results {
+    flex-grow: 1;
+    width: 100%;
+    overflow: scroll;
+}
+.filter-search-results .card.small {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    width: 185px;
+    height: 80px;
+    margin: 5px auto 5px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+}
+.filter-search-results .card.small:hover > .card-action {
+    background: #f0a830;
+    color: white;
+    transition: .3s;
+}
+.filter-search-results .card.small:hover > .card-action span {
+    color: white;
+}
+.filter-search-results .card.small .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    padding: 5px;
+}
+.filter-search-results .card.small .card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.filter-search-results .card.small .card-image span {
+    display: none;
+}
+.filter-search-results .card.small .card-action {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    position: static;
+    justify-content: center;
+    height: 100%;
+    background: whitesmoke;
+    border-left: 1px solid lightgray;
+    border-top: none;
+    border-radius: 0;
+}
+.filter-search-results .card.small .card-action span {
+    display: flex;
+    position: absolute;
+    color: lightgray;
+    top: 0;
+    right: 0;
+    transition: .5s;
+}

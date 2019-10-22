@@ -5,16 +5,25 @@ import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6
 import updateAction from '../../actions/updateAction';
 import removeAction from '../../actions/removeAction';
 import axios from 'axios';
+import base64 from 'react-native-base64';
+import concert from './Media/images/concert.jpg';
+import houston from './Media/images/houston.jpeg';
+import beach from './Media/images/beach.JPG';
 
 class Newsfeed extends Component {
     state = {
         data: [],
         post: '',
+        postb64: '',
         where: '',
+        whereb64: '',
         whom: '',
+        whomb64: '',
         when: '',
+        whenb64: '',
         update: 'newsfeed',
-        user_id: 2
+        user_id: localStorage.getItem('user_id'),
+        user_email: localStorage.getItem('user_email')
     };
 
     getData() {
@@ -28,33 +37,24 @@ class Newsfeed extends Component {
             this.setState({
                 data: this.props.updatedData,
                 post: '',
+                postb64: '',
                 where: '',
+                whereb64: '',
                 whom: '',
+                whomb64: '',
                 when: '',
+                whenb64: '',
             })
         }
     }
 
     componentDidMount() {
-        const controlClick = (e) => {
-
-            const el = e.target;
-
-            if (el.classList.contains('delete-post') === true) {
-                this.setState({
-                    id: el.id
-                })
-            }
-
-        }
-
-        window.addEventListener('click', controlClick);
-
         window.M.AutoInit();
         var options = {
             accordion: false
         }
         var elem = document.querySelector('.collapsible.expandable');
+        // eslint-disable-next-line
         var instance = window.M.Collapsible.init(elem, options);
 
         const res = this.getData();
@@ -63,6 +63,12 @@ class Newsfeed extends Component {
                 data: response.data
             })
         });
+    }
+
+    setId = (id) => {
+        this.setState({
+            id: id
+        })
     }
 
     removePost = (e) => {
@@ -78,49 +84,111 @@ class Newsfeed extends Component {
 
     changePost = (e) => {
         this.setState({
-            post: e.target.value
+            post: e.target.value,
+            postb64: base64.encode(e.target.value)
         })
     }
 
     changeWhere = (e) => {
         this.setState({
-            where: e.target.value
+            where: e.target.value,
+            whereb64: base64.encode(e.target.value)
         })
     }
 
     changeWith = (e) => {
         this.setState({
-            whom: e.target.value
+            whom: e.target.value,
+            whomb64: base64.encode(e.target.value)
         })
     }
 
     changeWhen = (e) => {
         this.setState({
-            when: e.target.value
+            when: e.target.value,
+            whenb64: base64.encode(e.target.value)
         })
     }
 
     render() {
         const arrayLength = this.state.data.length;
         const newsfeedArray = this.state.data.map((entry, i) => {
+            let image;
+            let date;
+            let time;
+            if (entry.id === 1) {
+                image = concert;
+                date = "Yesterday";
+                time = "9:24am";
+            } else if (entry.id === 2) {
+                image = houston;
+                date = "Yesterday";
+                time = "3:47pm";
+            } else {
+                image = beach;
+                date = "Oct 20, 2019";
+                time = "10:23pm";
+            }
             if (i + 1 === arrayLength) {
                 return (
                     <div className="row-newsfeed-posts hoverable last-post" key={i}>
-                        <button data-target="modal1" className="btn delete-post modal-trigger" id={entry.id}><i className="material-icons delete-post" id={entry.id}>delete</i></button>
-                        <div>{entry.post}</div>
-                        <div>{entry.where_at}</div>
-                        <div>{entry.with_whom}</div>
-                        <div>{entry.timestamp_option}</div>
+                        <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-post modal-trigger" id={entry.id}>delete</i>
+                        <div className="row-newsfeed-posts-left-col">
+                            <div className="newsfeed-timestamp-container">
+                                <i className="material-icons newsfeed-timestamp">access_time</i>
+                                {date}<br/>{time}
+                            </div>
+                            <img width="auto" height="100%" src={image} alt="" />
+                            <i className="material-icons newsfeed-menu">more_horiz</i>
+                        </div>
+                        <div className="row-newsfeed-posts-right-col">
+                            <div className="row-newsfeed-posts-right-col-info-row">
+                                <div>
+                                    <i className="material-icons">place</i>
+                                    <div>{entry.where_at}</div>
+                                </div>
+                                <div>
+                                    <i className="material-icons">group</i>
+                                    <div>{entry.with_whom}</div>
+                                </div>
+                                <div>
+                                    <i className="material-icons">timeline</i>
+                                    <div>{entry.timestamp_option}</div>
+                                </div>
+                            </div>
+                            <div className="row-newsfeed-entry">{entry.post}</div>
+                        </div>
                     </div>
                 )
             } else {
                 return (
-                    <div className="row-newsfeed-posts hoverable" key={i}>
-                        <button data-target="modal1" className="btn delete-post modal-trigger" id={entry.id}><i className="material-icons delete-post" id={entry.id}>delete</i></button>
-                        <div>{entry.post}</div>
-                        <div>{entry.where_at}</div>
-                        <div>{entry.with_whom}</div>
-                        <div>{entry.timestamp_option}</div>
+                    <div onClick={() => this.setId(entry.id)} className="row-newsfeed-posts hoverable" key={i}>
+                        <i data-target="modal1" className="material-icons delete-post modal-trigger" id={entry.id}>delete</i>
+                        <div className="row-newsfeed-posts-left-col">
+                            <div className="newsfeed-timestamp-container">
+                                <i className="material-icons newsfeed-timestamp">access_time</i>
+                                {date}<br/>{time}
+                            </div>
+                            <img width="auto" height="100%" src={image} alt="" />
+                            <i className="material-icons newsfeed-menu">more_horiz</i>
+                        </div>
+                        <div className="row-newsfeed-posts-right-col">
+                            <div className="row-newsfeed-posts-right-col-info-row">
+                                <div>
+                                    <i className="material-icons">place</i>
+                                    <div>{entry.where_at}</div>
+                                </div>
+                                <div>
+                                    <i className="material-icons">group</i>
+                                    <div>{entry.with_whom}</div>
+                                </div>
+                                <div>
+                                    <i className="material-icons">timeline</i>
+                                    <div>{entry.timestamp_option}</div>
+                                </div>
+                            </div>
+                            <div className="row-newsfeed-entry">{entry.post}</div>
+                        </div>
                     </div>
                 )
             }
@@ -140,8 +208,8 @@ class Newsfeed extends Component {
                                         <input onChange={this.changeWhere} className="browser-default" value={this.state.where} type="text" placeholder="Where did this take place..." />
                                         <input onChange={this.changeWith} className="browser-default" value={this.state.whom} type="text" placeholder="Who to include in your post..." />
                                         <input onChange={this.changeWhen} className="browser-default" value={this.state.when} type="text" placeholder="Leave a timestamp..." />
-                                        <button className="btn-small" type="submit">post</button>
                                     </div>
+                                    <button className="btn-flat" type="submit">post</button>
                                 </form>
                             </div>
                         </li>

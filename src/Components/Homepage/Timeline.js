@@ -25,7 +25,7 @@ class Timeline extends Component {
 
 function mapStateToProps(state) {
     return ({
-        timelineData: state
+
     })
 }
 

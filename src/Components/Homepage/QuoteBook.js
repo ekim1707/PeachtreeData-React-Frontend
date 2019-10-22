@@ -5,19 +5,27 @@ import removeAction from '../../actions/removeAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
 import axios from 'axios';
+import base64 from 'react-native-base64';
+import quote from './quote.png';
+import song from './song.png';
 
 class QuoteBook extends Component {
     state = {
         data: [],
         quote: '',
+        quoteb64: '',
         type: 'Quotation',
         origin: '',
+        originb64: '',
         significance: '',
+        significanceb64: '',
         when_said: '',
-        user_id: 2,
+        when_saidb64: '',
         toggleButton: 'add',
         id: '',
-        update: 'quotebook'
+        update: 'quotebook',
+        user_id: localStorage.getItem('user_id'),
+        user_email: localStorage.getItem('user_email')
     };
 
     getData() {
@@ -31,40 +39,22 @@ class QuoteBook extends Component {
             this.setState({
                 data: this.props.updatedData,
                 quote: '',
+                quoteb64: '',
                 type: 'Quotation',
                 origin: '',
+                originb64: '',
                 significance: '',
+                significanceb64: '',
                 when_said: '',
+                when_saidb64: '',
                 show: false
             })
         }
     }
 
     componentDidMount() {
-
-        const controlClick = (e) => {
-
-            const el = e.target;
-
-            if (el.classList.contains('delete-quote') === true) {
-                this.setState({
-                    id: el.id
-                })
-            } else if (el.id === "all") {
-                this.all();
-            } else if (el.id === "quotes") {
-                this.quotesOnly();
-            } else if (el.id === "lyrics") {
-                this.lyricsOnly();
-            }
-
-        }
-
-        window.addEventListener('click', controlClick);
+        // eslint-disable-next-line
         var instances = window.M.AutoInit();
-        // console.log(this.props.loggedIn);
-        // const userEmail = this.props.loggedIn.info.email;
-        // const userID = this.props.loggedIn.info.id;
         const res = this.getData();
         res.then((response) => {
             this.setState({
@@ -91,19 +81,32 @@ class QuoteBook extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const postData = {...this.state}
+        const postData = {...this.state};
         this.props.updateAction(postData);
+    }
+
+    setId = (id) => {
+        this.setState({
+            id: id
+        })
+    }
+
+    removeQuote = (e) => {
+        const deleteData = { id: this.state.id, user_id: this.state.user_id, update: this.state.update };
+        this.props.removeAction(deleteData);
     }
 
     changeQuote = (e) => {
         this.setState({
-            quote: e.target.value
+            quote: e.target.value,
+            quoteb64: base64.encode(e.target.value)
         })
     }
 
     changeSignificance = (e) => {
         this.setState({
-            significance: e.target.value
+            significance: e.target.value,
+            significanceb64: base64.encode(e.target.value)
         })
     }
 
@@ -115,19 +118,16 @@ class QuoteBook extends Component {
 
     changeOrigin = (e) => {
         this.setState({
-            origin: e.target.value
+            origin: e.target.value,
+            originb64: base64.encode(e.target.value)
         })
     }
 
     changeWhenSaid = (e) => {
         this.setState({
-            when_said: e.target.value
+            when_said: e.target.value,
+            when_saidb64: base64.encode(e.target.value)
         })
-    }
-
-    removeQuote = (e) => {
-        const deleteData = { id: this.state.id, user_id: this.state.user_id, update: this.state.update }
-        this.props.removeAction(deleteData);
     }
 
     all() {
@@ -176,27 +176,35 @@ class QuoteBook extends Component {
 
     render() {
         const arrayLength = this.state.data.length;
-        const quotesArray = this.state.data.map((entry, i) => {
+        const quotebookArray = this.state.data.map((entry, i) => {
             if (i + 1 === arrayLength) {
                 return (
                     <div className="row-quotes hoverable last-quote" key={i}>
-                        <button data-target="modal1" className="btn delete-quote modal-trigger" id={entry.id}><i className="material-icons delete-quote" id={entry.id}>delete</i></button>
-                        <div>"{entry.quote}"</div>
-                        <div>{entry.quote_type}</div>
-                        <div>{entry.origin}</div>
-                        <div>{entry.significance}</div>
-                        <div>{entry.when_said}</div>
+                        <img className="row-quotes-background" src={entry.quote_type === 'Quotation' ? quote : song} alt="" />
+                        <div className="row-quotes-main-entry">
+                            "{entry.quote}"
+                        </div>
+                        <div className="row-quotes-right-col">
+                            <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
+                            <div className="style-peachpuff">{entry.origin}</div>
+                            <div className="when-row"><i class="material-icons">watch_later</i>{entry.when_said}</div>
+                            {/* <div>{entry.significance}</div> */}
+                        </div>
                     </div>
                 )
             } else {
                 return (
                     <div className="row-quotes hoverable" key={i}>
-                        <button data-target="modal1" className="btn delete-quote modal-trigger" id={entry.id}><i className="material-icons delete-quote" id={entry.id}>delete</i></button>
-                        <div>"{entry.quote}"</div>
-                        <div>{entry.quote_type}</div>
-                        <div>{entry.origin}</div>
-                        <div>{entry.significance}</div>
-                        <div>{entry.when_said}</div>
+                        <img className="row-quotes-background" src={entry.quote_type === 'Quotation' ? quote : song} alt="" />
+                        <div className="row-quotes-main-entry">
+                            "{entry.quote}"
+                        </div>
+                        <div className="row-quotes-right-col">
+                            <i onClick={() => this.setId(entry.id)} data-target="modal1" className="material-icons delete-quote modal-trigger" id={entry.id}>delete</i>
+                            <div className="style-peachpuff">{entry.origin}</div>
+                            <div className="when-row"><i class="material-icons">watch_later</i>{entry.when_said}</div>
+                            {/* <div>{entry.significance}</div> */}
+                        </div>
                     </div>
                 )
             }
@@ -204,9 +212,9 @@ class QuoteBook extends Component {
         return (
             <div className="homepage-main-container">
                 <div className="quote-navbar">
-                    <div className="quote-navbar-toggles selected" id="all">All</div>
-                    <div className="quote-navbar-toggles" id="quotes">Quotes</div>
-                    <div className="quote-navbar-toggles" id="lyrics">Lyrics</div>
+                    <div onClick={() => this.all()} className="quote-navbar-toggles selected" id="all">All</div>
+                    <div onClick={() => this.quotesOnly()} className="quote-navbar-toggles" id="quotes">Quotations</div>
+                    <div onClick={() => this.lyricsOnly()} className="quote-navbar-toggles" id="lyrics">Lyrics</div>
                     <input type="text" className="quote-search browser-default" placeholder="search"/>
                     <button onClick={() => this.toggleAddQuote()} className="btn-floating btn-small waves-effect waves-light hoverable gray"><i className="material-icons">{this.state.toggleButton}</i></button>
                 </div>
@@ -226,13 +234,13 @@ class QuoteBook extends Component {
                                         <option value="Song Lyric">Song Lyric</option>
                                     </select>
                                 </div>
-                                <button className="btn-small" type="submit">Submit</button>
+                                <button className="btn-flat btn-quotebook" type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div className="main-container-quotes" id="main-container-quotes">
-                    {quotesArray}
+                    {quotebookArray}
                 </div>
                 <div id="modal1" className="modal">
                     <div className="modal-content">

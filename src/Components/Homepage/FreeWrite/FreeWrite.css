@@ -1,0 +1,411 @@
+.homepage-main-container.freewrite {
+    position: relative;
+    background: transparent;
+}
+.freewrite-bgi {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .5;
+    z-index: -5;
+}
+
+.freewrite-flex-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.freewrite-left-half {
+    width: 0;
+    height: 100%;
+    background: white; 
+    opacity: 0;
+    transition: 1s;
+}
+.freewrite-left-half > form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.freewrite-input-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 20%;
+}
+.textarea-title {
+    width: 70%;
+    height: 100%;
+    border: none;
+    border-top: 1px solid lightgray;
+    resize: none;
+    margin-right: 5px;
+}
+.textarea-title:focus {
+    border-top: 1px solid peachpuff;
+}
+.freewrite-inputs {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 30%;
+    height: 100%;
+    margin-left: 5px;
+}
+.freewrite-selects {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+.freewrite-selects > select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-top: 1px solid lightgray;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    background-color: white;
+}
+.freewrite-selects > select:hover {
+    cursor: pointer;
+}
+.freewrite-selects > select:focus {
+    outline: none;
+    border: none;
+    border-top: 1px solid peachpuff;
+}
+.freewrite-selects > i {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    color: lightgray;
+    pointer-events: none;
+}
+i.arrow-black {
+    color: black;
+}
+.freewrite-selects > input {
+    height: 100% !important;
+    font-size: 13px !important;
+    border-top: 1px solid lightgray !important;
+    border-bottom: none !important;
+    margin: 0 0 0 0 !important;
+}
+.freewrite-selects > input:hover {
+    cursor: pointer;
+}
+.freewrite-selects > input:focus {
+    border-top: 1px solid peachpuff !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.freewrite-selects > input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+.input-mood {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-top: 1px solid lightgray;
+}
+.input-mood:focus {
+    border-top: 1px solid peachpuff;
+}
+.textarea-entry {
+    width: 100%;
+    height: 70%;
+    border: none;
+    border-top: 1px solid lightgray;
+    resize: none;
+}
+.textarea-entry:focus {
+    border-top: 1px solid peachpuff;
+}
+.freewrite-footer {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+.textarea-tags {
+    width: 80%;
+    height: 100%;
+    border: none;
+    border-top: 1px solid lightgray;
+    margin-right: 5px;
+    resize: none;
+}
+.textarea-tags:focus {
+    border-top: 1px solid peachpuff;
+}
+.textarea-tags + button {
+    width: 20%;
+    height: 100%;
+    margin: 0 0 0 5px;
+    color: lightgray;
+    border-top: 1px solid lightgray;
+    transition: .5s;
+}
+.textarea-tags + button:hover {
+    color: white;
+    background: peachpuff !important;
+    border-top: 1px solid peachpuff;
+    transition: .5s;
+}
+.textarea-tags + button:focus {
+    background: white;
+    border-top: 1px solid peachpuff;
+}
+.freewrite-right-half {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: scroll;
+    transition: 1s;
+}
+.freewrite-right-half > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    background: gray;
+    margin: 2px;
+    transition: .5s;
+    z-index: 10;
+    transition: .5s;
+}
+.notepad-toggle {
+    right: 42px;
+}
+.journal-toggle {
+    right: 0;
+}
+.freewrite-right-half > button:hover {
+    color: white;
+    background: rgb(245, 183, 129);
+    transition: .5s;
+}
+.freewrite-right-half > button.selected {
+    background: rgb(245, 183, 129);
+}
+.freewrite-right-half-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 92%;
+    padding: 10px 0 0 20px;
+    overflow: scroll;
+}
+.sticky-note-container {
+    position: relative;
+}
+.sticky-note-container > img {
+    position: absolute;
+    top: -15px;
+    left: 43%;
+    z-index: 10;
+}
+.sticky-note {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
+    background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%);
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.sticky-note > i {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 2em;
+    color: red;
+    opacity: .1;
+    transition: .5s;
+}
+.sticky-note > i:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: .5s;
+}
+.sticky-note > i:hover ~ * {
+    color: red;
+}
+.sticky-note > i:hover ~ * > * {
+    color: red;
+}
+.list-title {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+.list-title:hover {
+    cursor: pointer;
+}
+.sticky-note > li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    list-style: initial;
+}
+.sticky-note > li:hover {
+    cursor: pointer;
+}
+.sticky-note > li > i + i:hover ~ span, .sticky-note > li > span:hover {
+    text-decoration: line-through;
+}
+#sticky-note-title {
+    width: 100%;
+}
+.check-note {
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+.remove-note {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    color: red;
+    font-weight: bolder;
+    font-size: 20px !important;
+    opacity: 0;
+}
+.remove-note:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+.remove-note:hover ~ i, .remove-note:hover ~ span {
+    color: red;
+}
+.modal.bottom-sheet {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: flex-end;
+    background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%);
+}
+.modal-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    font-size: 2em;
+}
+.modal-container {
+    width: 75%;
+    height: 87%;
+    padding: 0 0 0 0;
+    overflow-y: scroll;
+}
+.modal-container-header {
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    height: 10%;
+    right: 0;
+    top: 0;
+    background: #ffff88;
+    z-index: 10;
+}
+.modal-container-header > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+.modal-note {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    height: 25%;
+    margin: 0 0 10px 0;
+}
+.modal-note > i {
+    position: absolute;
+    left: 0;
+}
+.modal-note > span {
+    width: 30%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.journal-container {
+    display: flex;
+    position: absolute;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+    left: 0;
+    top: 0;
+}
+.journal-header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25%;
+    padding: 10px;
+    font-size: 2.5em;
+    background: white;
+    border-radius: 5px;
+}
+.journal-header > span {
+    position: absolute;
+    font-size: initial;
+}
+.journal-header-date {
+    left: 10px;
+    top: 10px;
+}
+.journal-header-mood {
+    right: 10px;
+    top: 10px;
+}
+.journal-header-tags {
+    right: 10px;
+    top: 30px;
+}
+.journal-entry {
+    width: 80%;
+    height: 70%;
+    padding: 10px 10px 10px 10px;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    overflow-y: scroll;
+}
+
+.fade-out {
+    animation: fade 1s linear;
+}
+@keyframes fade {
+    from { background: rgb(245, 183, 129) }
+    to { background: gray }
+}

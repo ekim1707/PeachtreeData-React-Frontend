@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from '../../../../Library/Caches/typescript/3.6/node_modules/redux';
 import loginAction from '../actions/loginAction';
 import SweetAlert from 'sweetalert2-react';
+import NavBar from './NavBar/NavBar';
 
 class Login extends Component {
     state = {
@@ -13,9 +14,8 @@ class Login extends Component {
     };
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(this.props.loginData);
         if (prevProps.loginData !== this.props.loginData) {
-            if (this.props.loginData) {
+            if (this.props.loginData.msg === "loggedIn") {
                 this.setState({
                     show: true
                 })
@@ -83,6 +83,7 @@ class Login extends Component {
                     confirmButtonColor="gray"
                     onConfirm={() => this.props.history.push(`/users/homepage`)}
                 />
+                <NavBar location={this.props.location} />
             </div>
         )
     }

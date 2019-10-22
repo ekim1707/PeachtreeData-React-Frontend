@@ -1,0 +1,310 @@
+.homepage-main-container.mediapage {
+    background: white;
+}
+.button-navbar-mediapage{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    color: white;
+    background: #f0a830;
+    border-bottom: 2px solid white;
+}
+.media-nav-first-toggle {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    padding-left: 5px;
+}
+.media-select-full, .media-select-album {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 0 5px;
+}
+.media-nav-second-toggle {
+    display: flex;
+    width: 40%;
+    height: 100%;
+}
+.media-select-photos, .media-select-videos {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 0 5px;
+}
+.image-icons-div, .video-icons-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+.media-select-full > i, .media-select-album > i {
+    pointer-events: none;
+}
+.media-select-full:hover, .media-select-album:hover, .media-select-photos:hover, .media-select-videos:hover {
+    cursor: pointer;
+}
+.media-nav-first-toggle > .album-select {
+    margin: 0 0 0 5px;
+    padding: 0 10px 0 10px;
+}
+.media-nav-first-toggle > .album-select > select {
+    background: #f0a830;
+    color: white;
+    border: none;
+    border-radius: 0;
+}
+.media-nav-first-toggle > .album-select > select:focus {
+    outline: none;
+}
+.media-nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+.media-nav-buttons > .btn-floating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    background: #f0a830;
+    box-shadow: none;
+}
+.media-nav-buttons > .btn-floating:hover {
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.selected {
+    background: rgb(245, 183, 129);
+    color: black;
+    border-color: black;
+}
+
+.media-container {
+    display: flex;
+    align-content: flex-start;
+    width: 100%;
+    height: 92%;
+    overflow: scroll;
+}
+.media-container.row {
+    margin: 0;
+}
+.card.small.media-card {
+    width: 16.66%;
+    height: 30%;
+    padding: 0;
+    margin: 0px;
+}
+.card.small.media-card > img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+}
+.card.small.media-card > iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+    pointer-events: none;
+}
+#modal2 {
+    width: 90%;
+    height: 90%;
+    max-height: 100%;
+    overflow: visible;
+    top: 5% !important;
+}
+.modal-album {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    z-index: 4;
+}
+.modal-album-label {
+    font-weight: bold;
+    color: #f0a830;
+}
+.modal-nav {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.modal-color-picker-background, .modal-color-picker-title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.modal-color-picker-background {
+    margin-bottom: 4px;
+}
+.modal-color-picker-background > label, .modal-color-picker-title > label {
+    font-weight: bold;
+    color: #f0a830;
+    margin: 0 3px 0 0;
+    z-index: 4;
+}
+.modal-color-picker-background > input, .modal-color-picker-title > input {
+    display: flex;
+    z-index: 4;
+}
+.video-info {
+    display: flex;
+    position: absolute;
+    flex-flow: column nowrap;
+    right: 0;
+    bottom: 10%;
+    text-align: center;
+    padding: 5px;
+    z-index: 4;
+}
+.video-info > span {
+    font-weight: bold;
+    color: #f0a830;
+}
+.video-info > hr {
+    border: 1px solid #f0a830;
+}
+.views-number {
+    font-weight: bold;
+    color: red;
+}
+#modal2 > .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+#modal2 > .modal-content > img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: 100%;
+}
+.description-tooltip {
+    display: none;
+    position: absolute;
+    max-width: 200px;
+    top: 40%;
+    right: 5%;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+#modal2 > .modal-content > img:hover + .description-tooltip {
+    display: block;
+}
+#modal2 > .modal-content > iframe:hover + .description-tooltip {
+    display: block;
+}
+#modal2 > .modal-footer {
+    width: 100%;
+    height: 10%;
+    padding: 0;
+}
+#modal2 > .modal-footer > .modal-footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    text-align: left;
+    padding-left: 5px;
+}
+.modal-footer-left > div > span {
+    font-weight: bold;
+    color: #f0a830;
+}
+.modal-footer-title {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-size: 1.75em;
+    font-weight: bolder;
+    color: #f0a830;
+}
+.modal-close-button-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+.modal-close-button-div > button {
+    height: 100%;
+    margin: 0;
+    color: black;
+}
+.upload-div {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 600px;
+    right: -300px;
+    bottom: -300px;
+    background: hsl(38, 86%, 56%);
+}
+.upload-div:hover {
+    cursor: pointer;
+}
+.upload-div:hover > .upload-area {
+    border: 2px dotted red;
+    transition: 1.5s;
+    animation: flashing 1.5s infinite ease-in-out;
+}
+.upload-div:hover > .upload-area > i {
+    animation: flashing 1.5s infinite ease-in-out;
+}
+@keyframes flashing {
+    from, to {
+        color: white;
+    }
+
+    50% {
+        color: red;
+    }
+}
+.upload-area {
+    display: flex;
+    position: absolute;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    right: 325px;
+    bottom: 325px;
+    color: white;
+    border: 2px dotted white;
+    transition: .5s;
+}
+.upload-area > i {
+    font-size: 100px;
+    color: white;
+}
+
+.material-tooltip .backdrop{
+	background: transparent !important;
+}
+
+#background:hover, #title:hover {
+    cursor: pointer;
+}

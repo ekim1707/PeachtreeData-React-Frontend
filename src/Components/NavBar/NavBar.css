@@ -1,29 +1,97 @@
-nav .active{
-    text-decoration: underline;
-}
-
-nav {
+.main-navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
     height: 10%;
     box-sizing: border-box;
     background: white;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
-nav .brand-logo, nav ul a {
-    color: gray;
-}
-nav #nav-image {
-    padding-left: 10px;
-}
-nav #nav-image:hover {
-    text-decoration: none;
-}
-.nav-wrapper {
+.main-navbar-left-col {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 25%;
     height: 100%;
+}
+#nav-image {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    object-fit: cover;
+}
+#logo {
+    display: inline-flex;
+    align-items: flex-end;
+    margin-left: 20px;
+    padding: 5px 5px 5px 5px;
+    color: black;
+    opacity: 1;
+}
+#logo > img {
+    margin: 0 2px 0 0;
+}
+.main-navbar-middle-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.main-navbar-middle-col.brand-logo {
+    color: black;
+    font-size: 3em;
+}
+.google-search {
+    width: 500px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+}
+.google-search:focus { 
+    outline: none;
+    border-color: peachpuff;
+    box-shadow: 0 0 10px peachpuff;
+}
+.main-navbar-right-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+.main-navbar-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.main-navbar-buttons:focus {
+    background: transparent;
+}
+.nav-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    text-decoration: none !important;
+    color: black;
+    font-weight: bolder;
+    font-size: .8em;
+    transition: .5s;
+}
+.nav-logout:hover {
+    color: white;
+}
+.nav-logout:hover {
+    background: peachpuff;
+    transition: .5s;
 }
 
 .homepage-filter-bar {
@@ -33,7 +101,7 @@ nav #nav-image:hover {
     align-items: center;
     height: 7%;
     background: whitesmoke;
-    border: 2px solid lightgray;
+    border: 1px solid lightgray;
     border-top: none;
 }
 .homepage-welcome {

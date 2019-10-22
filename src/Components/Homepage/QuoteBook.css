@@ -11,8 +11,8 @@
     align-items: center;
     width: 100%;
     height: 8%;
-    background: white;
-    border-bottom: 2px solid lightgray;
+    background: whitesmoke;
+    border-bottom: 1px solid lightgray;
 }
 .quote-navbar-toggles {
     display: flex;
@@ -20,19 +20,22 @@
     align-items: center;
     width: 8%;
     height: 100%;
-    color: rgb(103, 103, 103);
 }
 .quote-navbar-toggles:hover {
     cursor: pointer;
     background: peachpuff;
-    color: rgb(103, 103, 103);
 }
 .quote-navbar > .selected {
     background: peachpuff;
-    color: rgb(103, 103, 103);
 }
-.quote-navbar > .quote-search {
-    margin-left: 15px;
+.quote-search {
+    height: 100%;
+    background: whitesmoke;
+    border: none;
+    padding-left: 15px;
+}
+.quote-search:focus {
+    outline: none;
 }
 .quote-navbar > button.btn-floating {
     position: absolute;
@@ -43,41 +46,83 @@
 .quote-navbar > button.btn-floating:hover {
     background: rgb(245, 183, 129);
 }
-.row-quotes.add-quote {
-    height: 20%;
-    border-bottom: 2px solid lightgray;
-}
 .row-quotes {
     display: flex;
     position: relative;
-    flex-flow: column nowrap;
-    align-items: flex-start;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     height: 130px;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin: 10px;
     padding: 10px;
     background: white;
+    overflow: hidden;
 }
-.row-quotes > button.modal-trigger {
+.row-quotes.add-quote {
+    height: 20%;
+    margin: 0;
+    background: white;
+    border-bottom: 1px solid lightgray;
+}
+.row-quotes-background {
+    position: absolute;
+    width: 60%;
+    height: 129px;
+    left: 15%;
+    top: -5px;
+    object-fit: cover;
+    opacity: .1;
+}
+.row-quotes-main-entry {
+    width: 80%;
+    height: 100%;
+    margin-right: 5px;
+    font-size: 1.25em;
+    z-index: 10;
+    overflow-y: scroll;
+}
+.row-quotes-right-col {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    width: 20%;
+    height: 100%;
+    margin-left: 5px;
+    border: 5px solid whitesmoke;
+    background: whitesmoke;
+    text-align: center;
+    overflow-y: scroll;
+}
+.row-quotes-right-col > i {
     display: flex;
     position: absolute;
     justify-content: center;
-    width: 30px;
-    right: 0;
-    margin-right: 13px;
+    right: -5px;
+    top: -5px;
     padding: 0;
-    background: lightgray;
+    font-size: 2rem;
+    color: red;
     opacity: .1;
+    z-index: 10;
     transition: .5s;
 }
-.row-quotes > button.modal-trigger:hover {
-    background: whitesmoke;
+.row-quotes-right-col > i:hover {
     cursor: pointer;
     opacity: 1;
     transition: .5s;
 }
-.row-quotes > button.modal-trigger > i {
-    font-size: 2rem;
-    color: rgb(245, 183, 129);
+.when-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    padding: 0 25px 0 25px;
+    overflow-y: scroll;
+}
+.when-row > i {
+    position: absolute;
+    left: 0;
 }
 .modal {
     width: 30%;
@@ -113,6 +158,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    background: white;
 }
 .row-quotes.add-quote > form > textarea {
     border-color: lightgray;
@@ -121,22 +167,24 @@
     width: 45%;
     height: 100%;
     margin-right: 5px;
+    background: white;
 }
 .textarea-quote:focus, .textarea-significance:focus {
     outline: none;
     border-color: peachpuff;
     box-shadow: 0 0 10px peachpuff;
 }
-.text-inputs > input:focus, .quote-search:focus {
+.text-inputs > input:focus {
     outline: none;
-    border-style:solid;
+    border-style: solid;
     border-color: peachpuff;
     box-shadow: 0 0 10px peachpuff;
 }
 .textarea-significance {
     width: 35%;
     height: 100%;
-    margin-right: 5px;
+    margin-right: 10px;
+    background: white;
 }
 .input-container {
     display: flex;
@@ -148,18 +196,23 @@
 .text-inputs {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 50%;
     height: 100%;
 }
-.text-inputs > input.browser-default {
+.text-inputs > input {
     width: 100%;
-    height: 50%;
-    margin-right: 5px;
+    height: 48%;
+    margin-right: 10px;
+    padding-left: 5px;
+    border: none;
+    border: 1px solid lightgray;
 }
-input.browser-default.origin {
-    margin-bottom: 2px;
+.text-inputs > input:focus {
+    border-style: solid;
+    border-color: peachpuff;
+    box-shadow: 0 0 10px peachpuff;
 }
 .click-inputs {
     display: flex;
@@ -178,13 +231,11 @@ input.browser-default.origin {
 .click-inputs > .input-field > .select-wrapper {
     width: 100%;
     height: 100%;
+    background: white;
 }
-.click-inputs > .input-field > .select-wrapper {
-    width: 100%;
-    height: 100%;
-}
-.select-wrapper > ul {
+.click-inputs > .input-field > .select-wrapper > ul {
     height: 100px !important;
+    top: 0 !important;
 }
 .click-inputs > .input-field > .select-wrapper input.select-dropdown {
     width: 100%;
@@ -192,10 +243,14 @@ input.browser-default.origin {
     line-height: 1rem;
     font-size: 13px;
     color: black;
+    border: none;
     border: 1px solid lightgray;
     box-sizing: border-box;
     padding: 2px;
     margin: 0;
+}
+.click-inputs > .input-field > .select-wrapper input.select-dropdown:focus {
+    border: 1px solid peachpuff;
 }
 .dropdown-content {
     min-width: 0;
@@ -206,15 +261,27 @@ input.browser-default.origin {
     font-size: 13px;
     color: gray;
 }
-.btn-small, .btn-small:focus {
-    background: gray;
-}
-.btn-small:hover, .btn-small:focus:hover {
-    background: rgb(245, 183, 129);
-}
-.click-inputs > .btn-small {
+.btn-quotebook {
     width: 100%;
     height: 50%;
     margin: 1px;
-    overflow: hidden;
+    color: white;
+    background: gray;
+    opacity: .5;
+    transition: .5s;
+}
+.btn-quotebook:hover {
+    background: peachpuff;
+    opacity: 1;
+    transition: .5s;
+}
+
+.style-peachpuff {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    color: rgb(240, 158, 86);
 }

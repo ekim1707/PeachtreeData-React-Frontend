@@ -2,6 +2,19 @@
   box-sizing: border-box;
 }
 
+i {
+  user-select: none;
+}
+textarea {
+  resize: none;
+}
+textarea:focus, input:focus {
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .App {
   width: 100%;
   height: 100vh;
@@ -17,7 +30,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 .body-container {
   display: flex;
@@ -25,7 +38,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: whitesmoke;
 }
 
@@ -142,15 +155,15 @@ img {
 hr {
   margin: 0;
 }
-.homepage-navbar-hr {
-  border: 1px solid lightgray;
-}
 .btn {
   background: gray;
 }
 .btn:hover {
   background: rgb(245, 183, 129);
   color: white;
+}
+.btn:focus {
+  background: gray;
 }
 .input-field > .prefix.active {
   color: rgb(245, 183, 129);
@@ -180,6 +193,9 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label {
   width: 150px;
 }
 
+.hoverable {
+  transition: .5s;
+}
 .body-shake {
   animation: shake 1.3s ease-in-out;
 }
@@ -199,4 +215,70 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label {
   40%, 60% {
     transform: translate3d(5px, 0, 0);
   }
+}
+
+.about-page {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90%;
+  padding: 10px;
+  background: linear-gradient(135deg, peachpuff, white);
+}
+.about-page > div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: black;
+}
+.about-page > div > img {
+  border-radius: 10px;
+}
+
+.help {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  background: whitesmoke;
+}
+.help-nav {
+  display: flex;
+  position: fixed;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 20%;
+  height: 90%;
+  padding: 5px;
+  border-right: 1px solid lightgray;
+  background: white;
+}
+.help-nav-toc {
+  margin-top: 15px;
+  font-size: 1.25em;
+}
+.help-nav > ul {
+  font-size: 1em;
+}
+.help-nav > ul > li {
+  margin: 10px;
+  color: gray;
+  font-size: .75em;
+}
+.help-nav > ul > li:hover {
+  cursor: pointer;
+}
+.help-body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 20px 0;
+  overflow-y: scroll;
+}
+.help-body > div {
+  width: 55%;
 }
