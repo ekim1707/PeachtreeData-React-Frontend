@@ -12,6 +12,7 @@ This is a project I started around Week 5 or so of bootcamp and attempted 3 sepa
   * Screenshots
   * Github Link
   * Code Examples
+  * Contributors
 
 ## What It Is
 I first had the idea of a life-database type site at the start of bootcamp when I was looking ahead to my portfolio and good ideas for projects I could feature on it. I started it again around Week 5 on the side of class using only plain vanilla JavaScript, HTML, and CSS. I actually ended-up devoting a pretty significant amount of time to it, but once we had finished learning Node.js and Express, I had fallen in love with them so much I decided to try re-writing it (along with a lot of major styling changes). I also devoted some significant time to that outside of class, and of course once we were done learning React, I wanted this to be the final featured project on my portfolio, but I also wanted more practice with React (and specifically in this case, Redux), so I decided to make this one final large re-write.
@@ -94,3 +95,5 @@ const arrayLength = this.state.data.length;
        }
    })
 ```
+## Contributors 
+* Eugene Kim: https://github.com/ekim1707 
