@@ -28,7 +28,7 @@ I first had the idea of a life-database type site at the start of bootcamp when 
   
 
 ## Challenges
-I had done quite a few of my own practice projects up to this point, but this is definitely the first complete, significantly comprehensive, full-stack project I've done so far. It was definitely challenging in many aspects, but I think the single thing that stood out the most while I was toiling away at it was how endless it felt. I remember several times wondering if I should have chosen a different idea for this one instead of social-media because I needed to finish it as soon as possible to complete my portfolio. As I kept going, I kept finding more and more aspects I wanted to include, but I just felt like I didn't have the time or resources to handle it all by myself.
+I had done quite a few of my own practice projects up to this point, but this is definitely the first significantly comprehensive, full-stack project I feel like I've done. It was definitely challenging in many aspects, but I think the single thing that stood out the most while I was toiling away at it was how endless it felt. I remember several times wondering if I should have chosen a different idea for this one instead of social-media because I needed to finish it as soon as possible to complete my portfolio. As I kept going, I kept finding more and more aspects I wanted to include, but I just felt like I didn't have the time or resources to handle it all by myself.
 
 ## Screenshots
   * Connections page:
