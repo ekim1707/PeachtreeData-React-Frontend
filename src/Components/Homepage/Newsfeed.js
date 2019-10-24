@@ -27,7 +27,7 @@ class Newsfeed extends Component {
     };
 
     getData() {
-        const apiURL = `${window.apiHost}/users/components/?id=${this.state.user_id}&type=newsfeed`;
+        const apiURL = `https://still-falls-16479.herokuapp.com/users/components/?id=${this.state.user_id}&type=newsfeed`;
         const res = axios.get(apiURL);
         return res;
     }

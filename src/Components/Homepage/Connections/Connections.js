@@ -35,7 +35,7 @@ class Connections extends Component {
     };
 
     getUsersList() {
-        const apiURL = `${window.apiHost}/users/connections`;
+        const apiURL = `https://still-falls-16479.herokuapp.com/users/connections`;
         const res = axios.get(apiURL);
         return res;
     }

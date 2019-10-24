@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp -R ./build/* ../idea-react-new-frontend/public/",
+    "heroku-postbuild": "react-scripts build && cp -R ./build/* ../idea-react-new-frontend/public/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:4025"
+  }
 }

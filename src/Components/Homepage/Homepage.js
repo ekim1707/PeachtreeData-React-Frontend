@@ -50,14 +50,14 @@ class Homepage extends Component {
     }
 
     componentDidMount() {
-        const apiURL = `${window.apiHost}/users/?email=${this.state.user_email}`;
+        const apiURL = `https://still-falls-16479.herokuapp.com/users/?email=${this.state.user_email}`;
         const res = axios.get(apiURL);
         res.then((response) => {
             this.setState({
                 data: response.data
             })
         })
-        const msgApiURL = `${window.apiHost}/users/connections`;
+        const msgApiURL = `https://still-falls-16479.herokuapp.com/users/connections`;
         const msgRes = axios.get(msgApiURL);
         msgRes.then((response) => {
             const userList = response.data.filter((data) => {
