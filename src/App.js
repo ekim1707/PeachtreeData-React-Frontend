@@ -8,7 +8,7 @@ import NavBar from './Components/NavBar/NavBar';
 import About from './About';
 import Help from './Help';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 
 class App extends React.Component {
   constructor(props) {

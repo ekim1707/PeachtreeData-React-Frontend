@@ -3,7 +3,7 @@ import './QuoteBook.css';
 import updateAction from '../../actions/updateAction';
 import removeAction from '../../actions/removeAction';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import base64 from 'react-native-base64';
 import quote from './quote.png';

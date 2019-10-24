@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Media.css';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../../Library/Caches/typescript/3.6/node_modules/redux';
 import hardData from './data';
 import CardSet from './CardSet';
 import Modal from './Modal';
+import { bindActionCreators } from 'redux';
 
 class Media extends Component {
     state = {

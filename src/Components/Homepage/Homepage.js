@@ -11,7 +11,7 @@ import Settings from './Settings';
 import Feedback from './Feedback';
 import HomepageNavBar from '../NavBar/HomepageNavBar';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import Charles from './Connections/images/cortez.jpeg';
 import Danny from './Connections/images/danny.jpg';

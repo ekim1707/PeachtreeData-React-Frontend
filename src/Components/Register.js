@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar/NavBar.css';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import registerAction from '../actions/registerAction';
 import SweetAlert from 'sweetalert2-react';
 

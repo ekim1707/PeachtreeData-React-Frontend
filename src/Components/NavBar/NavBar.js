@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import pd from './newprofilepic.jpg';
 import logo from './icon-logo.png';
 import caricature from '../Homepage/Connections/images/caricature.png';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Newsfeed.css';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import updateAction from '../../actions/updateAction';
 import removeAction from '../../actions/removeAction';
 import axios from 'axios';
