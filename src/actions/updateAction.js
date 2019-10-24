@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default (data) => {
-    const registerURL = `${window.apiHost}/users/update/${data.update}`;
+    const registerURL = `https://still-falls-16479.herokuapp.com/users/update/${data.update}`;
     if (data.update === 'connections') {
         const res = axios.put(registerURL, data);
         return ({
