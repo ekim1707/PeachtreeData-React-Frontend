@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Places.css';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../../Library/Caches/typescript/3.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import GoogleMap from './GoogleMap';
 
 class Places extends Component {
