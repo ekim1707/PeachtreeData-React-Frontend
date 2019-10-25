@@ -42,7 +42,6 @@ I had done quite a few of my own practice projects up to this point, but this is
 [Github](https://github.com/ekim1707/PeachtreeData-React-Frontend)
 
 ## Code Examples
----
   Creating separate image/video "cards" with one large array of data:
 ```
 const cardList = this.props.data.map((card, i) => {
