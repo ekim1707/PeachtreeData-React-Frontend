@@ -15,6 +15,7 @@ class Login extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.loginData !== this.props.loginData) {
+            console.log(this.props.loginData);
             if (this.props.loginData.msg === "loggedIn") {
                 this.setState({
                     show: true

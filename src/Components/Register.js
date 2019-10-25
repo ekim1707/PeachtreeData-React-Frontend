@@ -19,6 +19,7 @@ class Register extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.registerData !== this.props.registerData) {
+            console.log(this.props.registerData);
             if (this.props.registerData.msg === "loggedIn") {
                 this.setState({
                     show: true
