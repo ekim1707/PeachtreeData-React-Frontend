@@ -1,6 +1,8 @@
 # PeachtreeData.com
 
-This is a project I started around Week 5 or so of bootcamp and attempted 3 separate versions of, culminating in this final version written in React.
+This is a project I started around Week 5 or so of bootcamp and attempted 3 separate versions of, culminating in this final version written in React. The full project was written with this frontend along with a seperate backend, and both were deployed separately. The backend is currently being served on Heroku while the frontend is running staticly on ec2.
+
+Note: If you would like to log into the site and see an account that already has seed-data in it, you may go to login and use "ekim1707@gmail.com" with password "yes". Otherwise, if you make your own account, it will look very empty, other than the media page.
 
 ## Video Link
 [PeachtreeData](https://www.youtube.com/watch?v=TMt0IHfmBbg)
