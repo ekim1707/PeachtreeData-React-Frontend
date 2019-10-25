@@ -1,6 +1,6 @@
 # PeachtreeData.com
 
-This is a project I started around Week 5 or so of bootcamp and attempted 3 separate versions of, culminating in this final version written in React. The full project was written with this frontend along with a seperate backend, and both were deployed individually. The backend is currently being served on Heroku while the frontend is running staticly on ec2.
+This is a project I started around Week 5 or so of bootcamp and attempted 3 separate versions of, culminating in this final version written in React. The full project was written with this frontend along with a seperate backend, and both were deployed individually. The backend is currently being served on Heroku while the frontend is running statically on ec2.
 
 Note: If you would like to log into the site and see an account that already has seed-data in it, you may go to login and use "ekim1707@gmail.com" with password "yes". Otherwise, if you make your own account, it will look very empty, other than the media page.
 
@@ -21,7 +21,7 @@ I first had the idea of a life-database type site at the start of bootcamp when 
 
 ## What I Used
   * HTML, CSS, JavaScript
-  * Node, Express (Express-Generator)
+  * Node, Express (Express-Generator), PostgreSQL
   * React (Create-React-App), React-Router
   * Redux, React-Redux, Redux-Promise
   * Axios, Base64, React-Native-Base64
