@@ -9,7 +9,6 @@ import About from './About';
 import Help from './Help';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {

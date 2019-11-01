@@ -32,6 +32,7 @@ class FreeWrite extends Component {
         modalData: [],
         modalTitle: '',
         modalList: '',
+        viewEntry: [],
         user_id: localStorage.getItem('user_id'),
         user_email: localStorage.getItem('user_email')
     };
@@ -50,7 +51,7 @@ class FreeWrite extends Component {
                 titleb64: '',
                 mood: '',
                 moodb64: '',
-                type: 'Notes',
+                type: this.state.container_contents === "notepad" ? 'Notes' : 'Journal',
                 list: '',
                 listb64: '',
                 entry: '',
@@ -66,7 +67,8 @@ class FreeWrite extends Component {
         const res = this.getData();
         res.then((response) => {
             this.setState({
-                data: response.data
+                data: response.data,
+                viewEntry: response.data.filter(note => note.entry_type === "Journal")
             })
         });
     }
@@ -260,6 +262,20 @@ class FreeWrite extends Component {
         this.props.removeAction(deleteData);
     }
 
+    selectEntry = (id, key) => {
+        document.querySelector(".journal-entry-list-container").childNodes.forEach((node) => {
+            if (node.classList.contains('make-peachpuff')) {
+                node.classList.remove('make-peachpuff');
+            }
+        });
+        document.querySelector(".journal-entry-list-container").childNodes[key].classList.add('make-peachpuff');
+        const filterCategory = this.state.data.filter(note => note.entry_type === "Journal");
+        const filterEntry = filterCategory.filter(entry => entry.id === id);
+        this.setState({
+            viewEntry: filterEntry
+        })
+    }
+
     render() {
         let containerContents;
         let optionArray;
@@ -303,16 +319,27 @@ class FreeWrite extends Component {
             })
         } else {
             const filterCategory = this.state.data.filter(note => note.entry_type === "Journal");
+            const entryList = filterCategory.map((entry, i) => {
+                if (i === 0) {
+                    return <div onClick={() => this.selectEntry(entry.id, i)} className="make-peachpuff" key={i}>{i + 1}</div>;
+                }
+                return <div onClick={() => this.selectEntry(entry.id, i)} key={i}>{i + 1}</div>;
+            })
             containerContents = 
                 <div className="journal-container">
                     <div className="journal-header hoverable">
-                        <span className="journal-header-date">DATE: 10/19/2019</span>
-                        <span className="journal-header-mood">MOOD: {filterCategory[0].mood}</span>
-                        <span className="journal-header-tags">TAGS: {filterCategory[0].tags}</span>
-                        {filterCategory[0].title}
+                        <span className="journal-header-date">DATE: 10/31/2019</span>
+                        <span className="journal-header-mood">MOOD: {this.state.viewEntry[0].mood}</span>
+                        <span className="journal-header-tags">TAGS: {this.state.viewEntry[0].tags}</span>
+                        {this.state.viewEntry[0].title}
                     </div>
                     <div className="journal-entry hoverable">
-                        {filterCategory[0].entry_block}
+                        {this.state.viewEntry[0].entry_block}
+                    </div>
+                    <div className="journal-entry-list">
+                        <div className="journal-entry-list-container">
+                            {entryList}
+                        </div>
                     </div>
                 </div>
         }

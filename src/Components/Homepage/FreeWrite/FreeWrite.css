@@ -401,6 +401,37 @@ i.arrow-black {
     border-radius: 5px 5px 0 0;
     overflow-y: scroll;
 }
+.journal-entry-list {
+    display: flex;
+    position: fixed;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 3%;
+    height: 77.5%;
+    bottom: 0;
+    right: 0;
+}
+.journal-entry-list-container {
+    width: 100%;
+    height: 100%;
+    background: white;
+    overflow-y: scroll;
+}
+.journal-entry-list-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid lightgray;
+}
+.journal-entry-list-container > div:hover {
+    cursor: pointer;
+}
+.make-peachpuff {
+    background: peachpuff;
+}
 
 .fade-out {
     animation: fade 1s linear;
