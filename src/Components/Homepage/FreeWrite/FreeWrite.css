@@ -399,6 +399,7 @@ i.arrow-black {
     padding: 10px 10px 10px 10px;
     background: white;
     border-radius: 5px 5px 0 0;
+    white-space: pre-line;
     overflow-y: scroll;
 }
 .journal-entry-list {
@@ -415,7 +416,7 @@ i.arrow-black {
 .journal-entry-list-container {
     width: 100%;
     height: 100%;
-    background: white;
+    background: transparent;
     overflow-y: scroll;
 }
 .journal-entry-list-container > div {
@@ -424,13 +425,16 @@ i.arrow-black {
     align-items: center;
     width: 100%;
     height: 10%;
+    background: white;
     border-bottom: 1px solid lightgray;
+    font-weight: bolder;
 }
 .journal-entry-list-container > div:hover {
     cursor: pointer;
 }
 .make-peachpuff {
-    background: peachpuff;
+    background: rgb(245, 189, 141) !important;
+    color: white;
 }
 
 .fade-out {
