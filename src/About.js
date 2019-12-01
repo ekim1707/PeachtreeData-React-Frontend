@@ -15,7 +15,7 @@ function About() {
                     <p>www.eugenekimportfolio.com</p>
                     <p>www.linkedin.com/in/eugene-kim-1707</p>
                     <br/>
-                    <p>HTML, CSS, JavaScript, Node, Express (Express-Generator), React (Create-React-App)</p>
+                    <p>HTML, CSS, JavaScript, Node, Express (Express-Generator), PostgreSQL, React (Create-React-App)</p>
                     <p>Axios, React-Router, Redux, React-Redux, Redux-Promise</p>
                     <p>Base64, React-Native-Base64, Bcrypt, DotENV, Helmet, PG-Promise, Rand-Token</p>
                     <p>Materialize, React-Multi-Carousel, SweetAlert2-React</p>
