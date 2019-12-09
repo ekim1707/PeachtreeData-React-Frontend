@@ -445,7 +445,7 @@ i.arrow-black {
     to { background: gray }
 }
 
-@media screen and (max-width: 1400px) and (orientation: portrait) {
+@media screen and (max-width: 1100px) and (orientation: portrait) {
     .icon-logo {
       display: none;
     }
