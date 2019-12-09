@@ -79,7 +79,7 @@ class Register extends Component {
                 <div className="body-container">
                     <div className="icon-logo"></div>
                     <form onSubmit={this.handleSubmit} className="signup-container">
-                        Create An Account
+                        <span>Create An Account</span>
                         <div className="signup-name-field">
                             <div className="input-field">
                                 <i className="material-icons prefix">account_circle</i>

@@ -151,7 +151,7 @@ class Newsfeed extends Component {
                                     <i className="material-icons">group</i>
                                     <div>{entry.with_whom}</div>
                                 </div>
-                                <div>
+                                <div className="mq">
                                     <i className="material-icons">timeline</i>
                                     <div>{entry.timestamp_option}</div>
                                 </div>
@@ -182,7 +182,7 @@ class Newsfeed extends Component {
                                     <i className="material-icons">group</i>
                                     <div>{entry.with_whom}</div>
                                 </div>
-                                <div>
+                                <div className="mq">
                                     <i className="material-icons">timeline</i>
                                     <div>{entry.timestamp_option}</div>
                                 </div>

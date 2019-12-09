@@ -59,12 +59,12 @@ class Login extends Component {
                     <form onSubmit={this.handleSubmit} className="form-flex">
                         <div className="input-field loginfields">
                             <i className="material-icons prefix">email</i>
-                            <input onChange={this.changeEmail} value={this.state.email} className="input-blue-border" type="text"/>
+                            <input onChange={this.changeEmail} value={this.state.email} type="text"/>
                             <label htmlFor="email">Email</label>
                         </div>
                         <div className="input-field loginfields">
                             <i className="material-icons prefix">lock</i>
-                            <input onChange={this.changePassword} value={this.state.password} className="input-blue-border" type="password"/>
+                            <input onChange={this.changePassword} value={this.state.password} type="password"/>
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="password-options">

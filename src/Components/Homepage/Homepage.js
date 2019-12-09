@@ -123,27 +123,27 @@ class Homepage extends Component {
                     <div className="homepage-navbar">
                         <NavLink exact to="/users/homepage/" className="homepage-nav-labels" id="nav-home">
                             <i className="material-icons prefix nav-icons">home</i>
-                            Newsfeed
+                            <span className="mq">Newsfeed</span>
                         </NavLink>
                         <NavLink to="/users/homepage/connections" className="homepage-nav-labels" id="connections-control-click">
                             <i className="material-icons prefix nav-icons">group</i>
-                            Connections
+                            <span className="mq">Connections</span>
                         </NavLink>
                         <NavLink to="/users/homepage/media" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">perm_media</i>  
-                            Media
+                            <span className="mq">Media</span>
                         </NavLink>
                         <NavLink to="/users/homepage/places" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">pin_drop</i>
-                            Places
+                            <span className="mq">Places</span>
                         </NavLink>
                         <NavLink to="/users/homepage/quotebook" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">format_quote</i>
-                            Quotes
+                            <span className="mq">Quotes</span>
                         </NavLink>
                         <NavLink to="/users/homepage/freewrite" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">create</i>
-                            FreeWrite
+                            <span className="mq">FreeWrite</span>
                         </NavLink>
                         {/* <NavLink to="/users/homepage/timeline" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">timeline</i>
@@ -157,15 +157,15 @@ class Homepage extends Component {
                         <hr className="homepage-navbar-hr"/>
                         <NavLink to="/users/homepage/settings" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">settings</i>
-                            Settings
+                            <span className="mq">Settings</span>
                         </NavLink>
                         <NavLink to="/users/homepage/feedback" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">feedback</i>
-                            Report Issues
+                            <span className="mq">Report Issues</span>
                         </NavLink>
                         <NavLink to="/help" className="homepage-nav-labels">
                             <i className="material-icons prefix nav-icons">help</i>
-                            Customer Support
+                            <span className="mq">Customer Support</span>
                         </NavLink>
                         <hr className="homepage-navbar-hr"/>
                         <div className="homepage-navbar-copyright-area">

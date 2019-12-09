@@ -444,3 +444,410 @@ i.arrow-black {
     from { background: rgb(245, 183, 129) }
     to { background: gray }
 }
+
+@media screen and (max-width: 1400px) and (orientation: portrait) {
+    .icon-logo {
+      display: none;
+    }
+    .signup-container {
+      width: 80%;
+    }
+    .login-container {
+      width: 80%;
+    }
+    .card.small.media-card {
+      width: 50%;
+      height: 50%;
+    }
+    #modal2 {
+      height: 60%;
+    }
+    .homepage-main-container.places {
+      background-size: contain;
+    }
+    .freewrite-flex-container {
+        flex-flow: column nowrap;
+    }
+    .freewrite-left-half {
+        width: 100% !important;
+        height: 50%;
+        opacity: 1;
+    }
+    .freewrite-right-half {
+        width: 100% !important;
+        height: 50%;
+    }
+    .freewrite-post-toggle {
+        display: none !important;
+    }
+    .journal-entry-list {
+        height: 33%;
+    }
+    .homepage-navbar {
+        position: relative;
+        width: 20%;
+    }
+    .sidenav {
+        width: 20%;
+    }
+    .homepage-main-container {
+        width: 80%;
+    }
+    .homepage-navbar-copyright-area {
+        position: absolute;
+        bottom: 10px;
+    }
+    .homepage-navbar-copyright-area-buttons {
+        flex-flow: column nowrap;
+        margin: 10px 0;
+    }
+    .quote-navbar-toggles {
+        width: 15%;
+    }
+    #logo {
+        display: none;
+    }
+    .row-newsfeed-posts-left-col > img {
+        width: 60%;
+        height: auto;
+    }
+    #nav-image {
+        height: 75%;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 750px) and (orientation: portrait) {
+    .brand-logo {
+        font-size: 20px !important;
+    }
+    .main-navbar-right-col {
+        flex-flow: column nowrap;
+    }
+    .nav-logout {
+        justify-content: center;
+    }
+    .main-navbar-buttons {
+        display: none;
+    }
+    .datepicker {
+        display: none;
+    }
+    .mq {
+        display: none !important;
+    }
+    .homepage-navbar {
+        width: 15%;
+    }
+    .sidenav {
+        width: 15%;
+    }
+    .homepage-main-container {
+        width: 85%;
+    }
+    .homepage-navbar-messenger-title {
+        display: none;
+    }
+    .homepage-navbar-messenger {
+        display: none;
+    }
+    .homepage-navbar-copyright-area {
+        font-size: 5px;
+    }
+    .homepage-navbar-copyright-area-buttons {
+        font-size: 11.2px;
+    }
+    .add-post-text-area {
+        width: 40%;
+    }
+    .add-post-text-inputs {
+        width: 30%;
+    }
+    .add-post-flex-container > .btn-flat {
+        width: 30%;
+    }
+    .row-newsfeed-posts > i.modal-trigger {
+        opacity: 1;
+        bottom: 13px;
+    }
+    .row-newsfeed-posts-left-col > img {
+        width: 100%;
+        height: auto;
+    }
+    .flex-letter-divs, .flex-letter-divs > .material-icons, .row-newsfeed-posts-right-col-info-row > div > i {
+        font-size: 10px;
+    }
+    .cardset-container {
+        height: 100%;
+    }
+    .background-image {
+        width: 100%;
+    }
+    .sidenav {
+        width: 100%;
+        height: 78%;
+        top: initial;
+        bottom: 0;
+    }
+    .user-name {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .connections-info > div {
+        text-align: center;
+    }
+    #modal1 {
+        width: 90%;
+    }
+    .button-navbar-mediapage {
+        font-size: 7px;
+    }
+    .media-nav-second-toggle {
+        justify-content: flex-end;
+    }
+    #modal2 {
+        font-size: 7px;
+    }
+    .quote-navbar {
+        font-size: 7px;
+    }
+    .btn-quotebook {
+        font-size: 8px;
+    }
+    .textarea-quote, .textarea-significance {
+        width: 30%;
+    }
+    .input-container {
+        width: 40%;
+    }
+    .row-quotes-background {
+        width: 80%;
+        left: 0;
+        padding: 10px;
+        object-fit: contain;
+    }
+    .row-quotes-right-col {
+        font-size: 10px;
+    }
+    .delete-quote {
+        opacity: 1 !important;
+        top: initial !important;
+        bottom: 0;
+        right: 50% !important;
+        transform: translateX(50%);
+    }
+    .when-row {
+        display: none;
+    }
+    .note-lists > i {
+        display: none;
+    }
+    .freewrite-input-container {
+        height: 30%;
+    }
+    .textarea-entry {
+        height: 60%;
+    }
+    .textarea-tags + button {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        color: darkgray;
+        padding: 0 !important;
+        line-height: initial !important;
+    }
+    .homepage-welcome {
+        font-size: 10px;
+    }
+    .journal-header {
+        font-size: 15px;
+    }
+    .journal-header-date, .journal-header-mood, .journal-header-tags {
+        display: none;
+    }
+    .journal-entry {
+        font-size: 10px;
+    }
+    .help-body, .help-nav {
+        font-size: 10px;
+    }
+    .help-nav {
+        justify-content: space-evenly;
+    }
+    #how {
+        font-size: 20px;
+    }
+    .row-newsfeed-posts-right-col-info-row > div {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    #nav-image {
+        height: 75%;
+        width: auto;
+    }
+    .main-navbar-middle-col.brand-logo {
+        font-size: 20px;
+    }
+    .signup-container {
+        position: relative;
+        height: 95%;
+    }
+    .signup-container > span {
+        position: absolute;
+        top: 10px;
+        font-size: 10px;
+    }
+    .login-container {
+        height: 90%;
+    }
+    .homepage-filter-bar {
+        display: none;
+    }
+    .homepage-body-container {
+        height: 100%;
+    }
+    .mq {
+        font-size: 10px;
+    }
+    .homepage-navbar-messenger-title, .homepage-navbar-messenger {
+        display: none;
+    }
+    .homepage-navbar-copyright-area {
+        display: none;
+    }
+    .sidenav {
+        font-size: 10px;
+    }
+    .user-name {
+        font-size: 10px;
+    }
+    .user-email, .user-location {
+        font-size: 8px;
+    }
+    .profile-picture {
+        width: 40px;
+        height: 40px;
+    }
+    .connections-info i {
+        display: none;
+    }
+    .connections-info > span {
+        width: 45%;
+    }
+    .filter-search-results .card.small {
+        width: 100px;
+        height: 60px;
+    }
+    .online-status {
+        display: none;
+    }
+    .modal-footer {
+        font-size: 7px;
+    }
+    .modal-album {
+        font-size: 10px;
+    }
+    .quote-navbar {
+        font-size: 7px;
+    }
+    .btn-quotebook {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+        font-size: 8px;
+        line-height: initial !important;
+    }
+    .btn-floating.btn-small {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .btn-floating.btn-small i {
+        line-height: 24px !important;
+    }
+    .row-quotes-right-col > i, .sticky-note > i {
+        opacity: 1;
+    }
+    .style-peachpuff {
+        height: 100%;
+        font-size: 15px;
+    }
+    .when-row {
+        display: none;
+    }
+    .freewrite-input-container {
+        height: 30%;
+    }
+    .textarea-entry {
+        height: 60%;
+    }
+    .textarea-tags + button, .add-post-flex-container > .btn-flat {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        color: darkgray;
+        padding: 0 !important;
+        line-height: initial !important;
+    }
+    .add-post-flex-container > .btn-flat {
+        color: black;
+    }
+    #modal1 {
+        width: 60%;
+        max-height: 60%;
+    }
+    .journal-header-date, .journal-header-mood, .journal-header-tags {
+        display: none;
+    }
+    .journal-header {
+        font-size: 20px;
+    }
+    .google-search {
+        width: 250px;
+        height: 30px;
+    }
+    .main-navbar-buttons {
+        display: none;
+    }
+    .help-nav {
+        overflow: scroll;
+    }
+    .add-quote {
+        padding: 5px;
+    }
+    .row-newsfeed-posts-right-col-info-row > .mq {
+        display: none;
+    }
+    .row-newsfeed-posts-right-col-info-row > div {
+        width: 50% !important;
+    }
+    .row-newsfeed-posts > i.modal-trigger {
+        opacity: 1;
+        bottom: 13px;
+    }
+    .row-newsfeed-posts-left-col > img {
+        width: 60%;
+        height: auto;
+    }
+    .nav-icons {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+    .media-file-upload {
+        display: none !important;
+    }
+    .button-navbar-mediapage {
+        font-size: 7px;
+    }
+    .media-nav-second-toggle {
+        justify-content: flex-end;
+    }
+    .homepage-nav-labels {
+        padding-left: 10px;
+    }
+}
