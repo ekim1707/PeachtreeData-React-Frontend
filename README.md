@@ -1,6 +1,6 @@
 # PeachtreeData.com
 
-Note: If you would like to log into the site and see an account that already has seed-data in it, the backend is still deployed through Heroku, thus you can run the application locally and login using username "ekim1707@gmail.com" and password "yes" (it will probably take a second before it responds due to Heroku free plan). Otherwise, if you can make your own account, but it will look very empty, other than the media page.
+Note: If you would like to log into the site and see an account that already has seed-data in it, the backend is still deployed through Heroku, thus you can run the application locally and login using username "ekim1707@gmail.com" and password "yes" (it will probably take a second before it responds due to Heroku free plan). Otherwise, you can make a new account, but it will look very empty, other than the media page.
 
 ## Video Link
 [PeachtreeData](https://www.youtube.com/watch?v=TMt0IHfmBbg)
